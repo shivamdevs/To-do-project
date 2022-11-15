@@ -9,13 +9,16 @@
     position: sticky;
     top: 0;
     width: 100%;
+    background-color: #fff;
+}
+.headbox {
+    width: 100%;
     border-bottom: 1px solid #ddd;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
 }
 .header-logo {
     display: inline-flex;
@@ -30,6 +33,31 @@
 .header-logo-img {
     width: 50px;
 }
+.head {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.head-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.current {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+
+
 .footer {
     padding: 20px;
     border-top: 1px solid #ddd;
@@ -103,30 +131,6 @@
 .button.cancel:not(:disabled):hover {
     background-color: orangered;
 }
-.main {
-    display: block;
-    flex: 1;
-}
-.head {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    border-bottom: 1px solid #ddd;
-}
-.head-action {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-}
-.current {
-    font-size: 18px;
-    font-weight: 600;
-}
 .adder {
     padding: 10vh 20px;
     display: flex;
@@ -160,6 +164,15 @@
 .group:not(.row) {
     flex-direction: column;
 }
+.group > h3 {
+    word-wrap: break-word;
+    max-width: 100%;
+    color: #545454;
+}
+.group > h2,
+.group > h3 {
+    margin-block: 5px;
+}
 .group > label {
     display: block;
     width: 100%;
@@ -187,10 +200,18 @@ textarea.input {
     max-height: 240px;
     resize: vertical;
 }
+.main {
+    display: block;
+    width: 100%;
+    flex: 1;
+}
 .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
     gap: 10px;
+    width: 100%;
     padding: 10px;
 }
 .cards:empty::before {
@@ -208,11 +229,9 @@ textarea.input {
     flex: 1;
     border-radius: 10px;
     background-color: #fff;
-    box-shadow: 2px 2px 8px 4px #0002;
-    border: 1px solid #ccc;
-    min-width: fit-content;
-    width: -webkit-fill-available;
-    max-width: -webkit-fill-available;
+    box-shadow: 2px 2px 4px 2px #0002;
+    border: 1px solid #ddd;
+    max-width: 100%;
 }
 .card-title {
     display: block;
@@ -240,7 +259,7 @@ textarea.input {
     flex-wrap: nowrap;
     width: 100%;
     justify-content: space-between;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ddd;
     align-items: center;
 }
 .card-options {
@@ -290,11 +309,24 @@ textarea.input {
 }
 
 @media screen and (max-width: 500px) {
+    .headbox, .head {
+        padding: 10px;
+    }
     .header-logo > h1 {
-        font-size: 22px;
+        font-size: 20px;
+        padding-inline: 5px;
+    }
+    .header-logo-img {
+        width: 40px;
     }
     .button {
         font-size: .9em;
-        padding: 6px 15px;
+        padding: 6px 12px;
+    }
+    .app {
+        min-height: 93vh;
+    }
+    .adder {
+        padding: 10px;
     }
 }
