@@ -1,0 +1,300 @@
+.app {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+}
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+}
+.header-logo {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo > h1 {
+    margin: 0;
+    color: purple;
+    padding-inline: 10px;
+}
+.header-logo-img {
+    width: 50px;
+}
+.footer {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.footer > a {
+    text-decoration: none;
+    color: darkblue;
+    font-size: 14px;
+    font-weight: 600;
+}
+.footer > a:hover {
+    text-decoration: underline;
+    color: red;
+}
+.version {
+    color: #2bc48a;
+    font-size: 14px;
+    font-weight: 600;
+}
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    border: 1px solid purple;
+    color: purple;
+    transition: .2s;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: 600;
+    gap: 8px;
+}
+.button.cancel {
+    border-color: orangered;
+    color: orangered;
+}
+.button:disabled,
+.button.disabled {
+    opacity: .7;
+    cursor: not-allowed;
+}
+.button:not(:disabled):hover {
+    background-color: purple;
+    color: #fff;
+    cursor: pointer;
+}
+.button.filter.up:not(:disabled),
+.button.filter.up:not(:disabled):hover {
+    background-color: blueviolet;
+    border-color: blueviolet;
+    color: #fff;
+}
+.button.filter.down:not(:disabled),
+.button.filter.down:not(:disabled):hover {
+    background-color: violet;
+    border-color: violet;
+    color: #fff;
+}
+.button.filter:not(.up):not(.down) > svg:not(.fill),
+.button.filter.up > svg:not(.up),
+.button.filter.down > svg:not(.down) {
+    display: none;
+}
+.button.cancel:not(:disabled):hover {
+    background-color: orangered;
+}
+.main {
+    display: block;
+    flex: 1;
+}
+.head {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.head-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.current {
+    font-size: 18px;
+    font-weight: 600;
+}
+.adder {
+    padding: 10vh 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0009;
+    position: fixed;
+    inset: 0;
+    z-index: 22;
+}
+.additem {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    max-height: 100%;
+    overflow: auto;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 4px 4px 16px 8px #0002;
+    border-radius: 10px;
+    padding: 10px;
+}
+.group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 10px;
+}
+.group:not(.row) {
+    flex-direction: column;
+}
+.group > label {
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-size: 17px;
+    color: #545454;
+}
+.group > label > span {
+    color: red;
+}
+.input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #727888;
+    outline: none;
+    border-radius: 8px;
+    transition: .2s;
+}
+.input:focus {
+    border-color: dodgerblue;
+    box-shadow: 0px 0px 0px 1px dodgerblue;
+}
+textarea.input {
+    min-height: 100px;
+    max-height: 240px;
+    resize: vertical;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+.cards:empty::before {
+    content: "Click on + Add to create new task.";
+    color: #727888;
+    font-weight: 500;
+    font-size: 14px;
+    width: 100%;
+    padding: 5vh 20px;
+    text-align: center;
+}
+.card {
+    display: block;
+    padding: 10px;
+    flex: 1;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px 8px 4px #0002;
+    border: 1px solid #ccc;
+    min-width: fit-content;
+    width: -webkit-fill-available;
+    max-width: -webkit-fill-available;
+}
+.card-title {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    color: purple;
+    font-size: 20px;
+    font-weight: 600;
+}
+.card-description {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    color: #545454;
+    font-size: 17px;
+}
+.card-title,
+.card-description:not(:empty) {
+    margin-block: 10px 20px;
+}
+.card-footer {
+    padding-top: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    align-items: center;
+}
+.card-options {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.card-time {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 20px;
+}
+.card-time > div {
+    display: block;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 600;
+    color: #727888;
+}
+.action {
+    min-height: 40px;
+    min-width: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: .1s;
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.action.cancel {
+    color: orangered;
+    border-color: orangered;
+}
+.action:hover {
+    background-color: dodgerblue;
+    color: #fff;
+    cursor: pointer;
+}
+.action.cancel:hover {
+    background-color: orangered;
+}
+
+@media screen and (max-width: 500px) {
+    .header-logo > h1 {
+        font-size: 22px;
+    }
+    .button {
+        font-size: .9em;
+        padding: 6px 15px;
+    }
+}
