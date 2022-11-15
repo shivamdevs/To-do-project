@@ -8,7 +8,15 @@ import ContentEditable from 'react-contenteditable';
 function App() {
     const [adder, setAdder] = useState(false);
     const [deleter, setDeleter] = useState(false);
-    const [filter, setFilter] = useState("-time");
+    const [filter, setFilter] = useState(function() {
+        if (window.localStorage) {
+            if (window.localStorage.getItem('--to--sort') !== null) {
+                return window.localStorage.getItem('--to--sort');
+            }
+            window.localStorage.setItem('--to--sort', '-time');
+        }
+        return "-time";
+    });
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [pushid, setPushid] = useState(null);
@@ -24,7 +32,11 @@ function App() {
     const filterData = (data) => {
         if (data !== null) {
             setFilter(old => {
-                return (data === old) ? '-' + data : data;
+                const value = (data === old) ? '-' + data : data;
+                if (window.localStorage) {
+                    window.localStorage.setItem('--to--sort', value);
+                }
+                return value;
             });
         }
     };
@@ -63,7 +75,6 @@ function App() {
                 return newList;
             });
         }
-        filterData(null);
         setAdder(false);
         e.target.reset();
         setName("");
@@ -193,7 +204,7 @@ function App() {
             </main>
             <footer className="footer">
                 <a href="//github.com/shivamdevs" target="_blank" rel="noreferrer">© Shivam Devs 2022</a>
-                <div className="version">Version: 1.1.3</div>
+                <div className="version">Version: 1.1.4</div>
             </footer>
         </div>
     );
