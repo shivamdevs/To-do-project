@@ -331,4 +331,12 @@ div.input {
     .adder {
         padding: 10px;
     }
+    .card-description {
+        font-size: 15px;
+    }
+    .action {
+        font-size: 16px;
+        min-height: 35px;
+        min-width: 35px;
+    }
 }
