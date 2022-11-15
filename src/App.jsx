@@ -106,21 +106,21 @@ function App() {
                         <img src="/logo192.png" className="header-logo-img" alt="" />
                         <h1>To do List</h1>
                     </div>
-                    <button className="button" onClick={() => setAdder(true)}><i className="fas fa-plus"></i><span>Add Task</span></button>
+                    <button className="button" onClick={() => setAdder(true)}><i className="fas fa-fw fa-plus"></i><span>Add Task</span></button>
                 </div>
                 <div className="head">
                     <div className="current">All tasks (<span>{items.length}</span>)</div>
                     <div className="head-action">
                         <button className={`button filter ${(filter === "name") && "down"} ${(filter === "-name") && "up"}`} onClick={() => filterData("name")}>
-                            <i className="far fa-filter-list fill"></i>
-                            <i className="far fa-arrow-down-z-a up"></i>
-                            <i className="far fa-arrow-down-a-z down"></i>
+                            <i className="far fa-fw fa-filter-list fill"></i>
+                            <i className="far fa-fw fa-arrow-down-z-a up"></i>
+                            <i className="far fa-fw fa-arrow-down-a-z down"></i>
                             <span>Name</span>
                         </button>
                         <button className={`button filter ${(filter === "time") && "down"} ${(filter === "-time") && "up"}`} onClick={() => filterData("time")}>
-                            <i className="far fa-clock fill"></i>
-                            <i className="far fa-arrow-down-short-wide up"></i>
-                            <i className="far fa-arrow-down-wide-short down"></i>
+                            <i className="far fa-fw fa-clock fill"></i>
+                            <i className="far fa-fw fa-arrow-down-short-wide up"></i>
+                            <i className="far fa-fw fa-arrow-down-wide-short down"></i>
                             <span>Created</span>
                         </button>
                     </div>
@@ -193,7 +193,7 @@ function App() {
             </main>
             <footer className="footer">
                 <a href="//github.com/shivamdevs" target="_blank" rel="noreferrer">© Shivam Devs 2022</a>
-                <div className="version">Version: 1.1.1</div>
+                <div className="version">Version: 1.1.2</div>
             </footer>
         </div>
     );
@@ -209,11 +209,11 @@ function Card(props) {
             <div className="card-footer">
                 <div className="card-time">
                     <div className="card-time-ago">Updated: <ReactTimeago date={props.item.update || props.item.time}/></div>
-                    <div className="card-time-now">Created: {new Date(props.item.time).toString().slice(4, 24)}</div>
+                    <div className="card-time-now">Created: <ReactTimeago date={props.item.time /*new Date(props.item.time).toString().slice(4, 24)*/} /></div>
                 </div>
                 <div className="card-options">
-                    <button className="action" onClick={() => {props.setName(props.item.name); props.setDescription(props.item.description); props.setPushid(props.id); props.setAdder(true)}}><i className="far fa-pencil"></i></button>
-                    <button className="action cancel" onClick={() => props.delete(props.item, props.id)}><i className="far fa-trash"></i></button>
+                    <button className="action" onClick={() => {props.setName(props.item.name); props.setDescription(props.item.description); props.setPushid(props.id); props.setAdder(true)}}><i className="far fa-fw fa-pencil"></i></button>
+                    <button className="action cancel" onClick={() => props.delete(props.item, props.id)}><i className="far fa-fw fa-trash"></i></button>
                 </div>
             </div>
         </div>

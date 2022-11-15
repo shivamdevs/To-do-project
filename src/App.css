@@ -32,6 +32,7 @@
 }
 .header-logo-img {
     width: 50px;
+    height: 50px;
 }
 .head {
     padding: 10px 20px;
@@ -119,8 +120,8 @@
 }
 .button.filter.down:not(:disabled),
 .button.filter.down:not(:disabled):hover {
-    background-color: violet;
-    border-color: violet;
+    background-color: dodgerblue;
+    border-color: dodgerblue;
     color: #fff;
 }
 .button.filter:not(.up):not(.down) > svg:not(.fill),
@@ -195,10 +196,10 @@
     border-color: dodgerblue;
     box-shadow: 0px 0px 0px 1px dodgerblue;
 }
-textarea.input {
-    min-height: 100px;
+div.input {
+    min-height: 120px;
     max-height: 240px;
-    resize: vertical;
+    overflow: auto;
 }
 .main {
     display: block;
@@ -317,14 +318,15 @@ textarea.input {
         padding-inline: 5px;
     }
     .header-logo-img {
-        width: 40px;
+        width: 35px;
+        height: 35px;
     }
     .button {
         font-size: .9em;
         padding: 6px 12px;
     }
     .app {
-        min-height: 93vh;
+        min-height: 92vh;
     }
     .adder {
         padding: 10px;
