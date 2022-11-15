@@ -211,9 +211,9 @@ div.input {
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
-    padding: 10px;
+    padding: 20px 10px;
 }
 .cards:empty::before {
     content: "Click on + Add to create new task.";

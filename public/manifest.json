@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "To Do List",
+  "name": "An Upgrad edu React project for managing tasks on local-storage level.",
   "icons": [
     {
       "src": "favicon.ico",
