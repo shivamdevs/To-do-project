@@ -166,7 +166,7 @@ function App() {
                             <ContentEditable
                                 contentEditable={true}
                                 html={description || ""}
-                                onChange={(e) => {setDescription(e.target.value);console.log(e);}}
+                                onChange={(e) => setDescription(e.target.value)}
                                 id="description"
                                 className="input"
                             />
@@ -193,7 +193,7 @@ function App() {
             </main>
             <footer className="footer">
                 <a href="//github.com/shivamdevs" target="_blank" rel="noreferrer">© Shivam Devs 2022</a>
-                <div className="version">Version: 1.1.0</div>
+                <div className="version">Version: 1.1.1</div>
             </footer>
         </div>
     );
