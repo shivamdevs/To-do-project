@@ -175,7 +175,10 @@
     margin-block: 5px;
 }
 .group > label {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     font-weight: 600;
     font-size: 17px;
@@ -183,6 +186,12 @@
 }
 .group > label > span {
     color: red;
+}
+.group .limit {
+    color: #727888;
+    font-weight: 600;
+    font-size: 13px;
+    margin-left: auto;
 }
 .input {
     width: 100%;
@@ -210,7 +219,7 @@ div.input {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: baseline;
+    align-items: stretch;
     gap: 15px;
     width: 100%;
     padding: 20px 10px;
@@ -225,7 +234,9 @@ div.input {
     text-align: center;
 }
 .card {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     padding: 10px;
     flex: 1;
     border-radius: 10px;
@@ -262,6 +273,7 @@ div.input {
     justify-content: space-between;
     border-top: 1px solid #ddd;
     align-items: center;
+    margin-top: auto;
 }
 .card-options {
     display: inline-flex;
@@ -309,9 +321,9 @@ div.input {
     background-color: orangered;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
     .headbox, .head {
-        padding: 10px;
+        padding: 5px 10px;
     }
     .header-logo > h1 {
         font-size: 20px;
@@ -333,6 +345,13 @@ div.input {
     }
     .card-description {
         font-size: 15px;
+    }
+    .card-title,
+    .card-description:not(:empty) {
+        margin-block: 5px 10px;
+    }
+    .card-footer {
+        padding-top: 5px;
     }
     .action {
         font-size: 16px;

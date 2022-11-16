@@ -161,11 +161,11 @@ function App() {
                             {pushid !== null && <h2>Edit Task</h2>}
                         </div>
                         <div className="group">
-                            <label htmlFor="title">Task <span>*</span></label>
+                            <label htmlFor="title"><div>Task <span>*</span></div><div className="limit">{name.length}/250</div></label>
                             <input
                                 type="text"
                                 defaultValue={name}
-                                onChange={(e) => setName(e.target.value.trim(""))}
+                                onChange={(e) => {if (name.length >= 250) e.target.value = e.target.value.slice(0, -1);setName(e.target.value.trim(""))}}
                                 id="title"
                                 autoFocus
                                 className="input"
@@ -173,7 +173,7 @@ function App() {
                             />
                         </div>
                         <div className="group">
-                            <label htmlFor="description">Task Description</label>
+                            <label htmlFor="description"><div>Task Description</div></label>
                             <ContentEditable
                                 contentEditable={true}
                                 html={description || ""}
@@ -204,7 +204,7 @@ function App() {
             </main>
             <footer className="footer">
                 <a href="//github.com/shivamdevs" target="_blank" rel="noreferrer">© Shivam Devs 2022</a>
-                <div className="version">Version: 1.1.5</div>
+                <div className="version">Version: 1.2.0</div>
             </footer>
         </div>
     );
