@@ -204,7 +204,7 @@ function App() {
             </main>
             <footer className="footer">
                 <a href="//github.com/shivamdevs" target="_blank" rel="noreferrer">© Shivam Devs 2022</a>
-                <div className="version">Version: 1.2.1</div>
+                <div className="version">Version: 1.2.2</div>
             </footer>
         </div>
     );
