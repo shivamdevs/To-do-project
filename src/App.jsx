@@ -204,7 +204,7 @@ function App() {
             </main>
             <footer className="footer">
                 <a href="//github.com/shivamdevs" target="_blank" rel="noreferrer">© Shivam Devs 2022</a>
-                <div className="version">Version: 1.2.0</div>
+                <div className="version">Version: 1.2.1</div>
             </footer>
         </div>
     );
@@ -220,7 +220,7 @@ function Card(props) {
             <div className="card-footer">
                 <div className="card-time">
                     <div className="card-time-ago">Updated: <ReactTimeago date={props.item.update || props.item.time}/></div>
-                    <div className="card-time-now">Created: <ReactTimeago date={props.item.time /*new Date(props.item.time).toString().slice(4, 24)*/} /></div>
+                    <div className="card-time-now">Created: <ReactTimeago date={props.item.time} /></div>
                 </div>
                 <div className="card-options">
                     <button className="action" onClick={() => {props.setName(props.item.name); props.setDescription(props.item.description); props.setPushid(props.id); props.setAdder(true)}}><i className="far fa-fw fa-pencil"></i></button>
